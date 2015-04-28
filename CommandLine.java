@@ -5,7 +5,11 @@
 public class CommandLine {
 	public static void main (String args[])
 	{
-	  FlightSystem p = new FlightSystem(args[0]);
+	  try {
+	      FlightSystem p = new FlightSystem(args[0]);
+	  } catch (MyException e){
+	      System.out.println(e.err);
+	  }
 	}
 
 }
