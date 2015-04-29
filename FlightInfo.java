@@ -5,13 +5,13 @@ import java.text.*;
 
 
 
-public class Graph{
-    public Graph(String filename)
+public class FlightInfo {
+    public FlightInfo(String filename)
     throws MyException
     {
-       edges = new HashMap<Pair,FlightInfo>();
+	
     }
 
-    private Map<Pair,FlightInfo> edges;
-
+	
+	
 }
