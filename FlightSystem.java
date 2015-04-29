@@ -9,37 +9,33 @@ public class FlightSystem {
     public FlightSystem(String filename)
     throws MyException
     {
-	Scanner sc = null;
+	String content = null;
 	    try {
-		sc = new Scanner(new FileReader(filename));  	   
+		content = new Scanner(new FileReader(filename)).useDelimiter("\\Z").next();	   
             }
 	    catch (FileNotFoundException e) {}
-	    String s = sc.nextLine();
-	    if (s.length() != 0)
-	      {
-		  SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/YYYY");
-		  Date t; 
-	    	  while (sc.hasNextLine())
-	    	  {   
-		      try { 
-			  t = ft.parse(s); 
-			  System.out.println(t); 
-		      } catch (ParseException e) {
-			  throw new MyException("incorrectly formatted flight data");
-		      }
-		      s = sc.nextLine();
-	              if (s.startsWith("#")) s = sc.nextLine();
-	    	  }
-		 
-		      try { 
-			  t = ft.parse(s); 
-			  System.out.println(t); 
-		      } catch (ParseException e) {
-			  throw new MyException("incorrectly formatted flight data");
-		       }
-
-	      }
-	      sc.close();
+	      	  SimpleDateFormat ft = new SimpleDateFormat ("HH:mm-dd/MM/yyyy");
+		  Date t;
+		  String[] fields = content.split(",|\\[|\\]|\\n");		
+      		  List<String> af = Arrays.asList(fields);
+		  ArrayList<String> ff = new ArrayList<String>();
+			  for (String temp: af){
+			      if (temp.length() > 0) ff.add(temp);
+			  }
+			   for (int i = 0; i != ff.size()/7; ++i){
+			       try {
+				   t = ft.parse(ff.get(1+i*7) + "-" + ff.get(0+i*7));
+				   
+				   //time data
+				   //   System.out.println(ff.get(1+i*7));
+				   //System.out.println(t);
+				   System.out.println("Adding edge from " + ff.get(2+i*7) + " to " + ff.get(3+i*7));
+			       } catch (ParseException e) {
+				   throw new MyException("Parse Failure");
+			       }
+			   }
+			 	       
+	     
     }	      
 
 }
