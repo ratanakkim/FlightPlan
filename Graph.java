@@ -1,17 +1,17 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.*;
-import java.text.*;
-
-
 
 public class Graph{
-    public Graph
-    throws MyException
-    {
-       edges = new HashMap<Pair,FlightInfo>();
+    public Graph () {
+	edges = new HashMap<Pair,FlightInfo>();
     }
-
-    private Map<Pair,FlightInfo> edges;
-
+    
+    public void addEdge(FlightInfo flight){
+	Pair temp = new Pair();
+	temp.from = flight.origin;
+	temp.to = flight.dest;
+	edges.put(temp,flight);
+	System.out.println("Adding edge from " + temp.from + " to " + temp.to); 
+    }
+	
+    private HashMap<Pair,FlightInfo> edges;
 }

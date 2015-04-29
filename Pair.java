@@ -1,5 +1,5 @@
 class Pair
 {
-    String orig;
-    String dest;
+    String from;
+    String to;
 } 
