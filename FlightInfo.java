@@ -6,7 +6,7 @@ import java.text.*;
 
 
 public class FlightInfo {
-    public FlightInfo(String filename)
+    public FlightInfo
     throws MyException
     {
 	

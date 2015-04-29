@@ -6,7 +6,7 @@ import java.text.*;
 
 
 public class Graph{
-    public Graph(String filename)
+    public Graph
     throws MyException
     {
        edges = new HashMap<Pair,FlightInfo>();
