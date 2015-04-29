@@ -14,9 +14,7 @@ public class FlightSystem {
 		content = new Scanner(new FileReader(filename)).useDelimiter("\\Z").next();	   
             }
 	    catch (FileNotFoundException e) {}
-	      	  SimpleDateFormat ft = new SimpleDateFormat ("HH:mm-dd/MM/yyyy");
-
-		  
+	      	  SimpleDateFormat ft = new SimpleDateFormat ("HH:mm-dd/MM/yyyy"); 
 		  String[] fields = content.split(",|\\[|\\]|\\n");		
       		  List<String> af = Arrays.asList(fields);
 		  ArrayList<String> ff = new ArrayList<String>();
@@ -40,6 +38,4 @@ public class FlightSystem {
 			   }			   
 	
     }
-
-
 }
