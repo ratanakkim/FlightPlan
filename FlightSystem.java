@@ -35,7 +35,8 @@ public class FlightSystem {
  			       } catch (ParseException e) {
 				   throw new MyException("Parse Failure");
 			       }
-			   }			   
+			   }
+			   allFlights.printEdges();
 	
     }
 }

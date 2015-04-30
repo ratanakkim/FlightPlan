@@ -1,5 +1,6 @@
 class Pair
 {
-    String from;
-    String to;
+    public String from;
+    public String to;
+
 } 
