@@ -41,7 +41,7 @@ public class FlightSystem {
 			  
 			   allFlights.printEdges();
 			   
-			   
+			   System.out.println("There are " + allFlights.numEdges() + " Flights ");
 			   System.out.println("----------Flights From Sydney----------");
 			   for (FlightInfo j :allFlights.getEdges("Sydney")){
 			       System.out.println("To " + j.dest + " on " + j.date);

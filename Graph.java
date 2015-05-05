@@ -38,7 +38,11 @@ public class Graph{
 	}
 	    return flights;
     }
-    
+
+
+    public int numEdges(){
+	return edges.size();
+    }
 	
     private Map<Pair,FlightInfo> edges;
 }
