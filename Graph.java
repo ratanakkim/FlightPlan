@@ -30,6 +30,14 @@ public class Graph{
 	    System.out.println("(" + entry.getKey().from + "," + entry.getKey().to + ")");
 	}
     }
+
+    public ArrayList<FlightInfo> getEdges(String from){
+	ArrayList<FlightInfo> flights = new ArrayList<FlightInfo>();
+	for (Map.Entry<Pair,FlightInfo> entry : edges.entrySet()) {
+	    if (entry.getKey().from.equals(from)) flights.add(entry.getValue());
+	}
+	    return flights;
+    }
     
 	
     private Map<Pair,FlightInfo> edges;

@@ -36,7 +36,16 @@ public class FlightSystem {
 				   throw new MyException("Parse Failure");
 			       }
 			   }
+
+			   //EXAMPLE USAGE FOR GRAPH.JAVA
+			  
 			   allFlights.printEdges();
-	
+			   
+			   
+			   System.out.println("----------Flights From Sydney----------");
+			   for (FlightInfo j :allFlights.getEdges("Sydney")){
+			       System.out.println("To " + j.dest + " on " + j.date);
+			   }
+			   //END
     }
 }
