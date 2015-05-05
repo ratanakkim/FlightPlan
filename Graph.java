@@ -31,6 +31,10 @@ public class Graph{
 	}
     }
 
+    /* @ String from- origin city
+     * @ return ArrayList<FlightInfo> - ArrayList
+     * of all the edges from the specified city 
+     */
     public ArrayList<FlightInfo> getEdges(String from){
 	ArrayList<FlightInfo> flights = new ArrayList<FlightInfo>();
 	for (Map.Entry<Pair,FlightInfo> entry : edges.entrySet()) {
@@ -39,7 +43,7 @@ public class Graph{
 	    return flights;
     }
 
-
+    /* @ return int- number of total edges in graph */
     public int numEdges(){
 	return edges.size();
     }
